@@ -8,16 +8,39 @@
 <meta name="author" content="Abbosov Azizbek">
 <title>Abbosov Azizbek - Professional Biography</title>
 <style>
-  body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f7f7f7; color: #333; }
-  header { text-align: center; margin-bottom: 30px; }
-  h1 { font-size: 2em; margin-bottom: 0; }
-  h2 { margin-top: 40px; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
-  section { background-color: #fff; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-  ul { list-style-type: none; padding-left: 0; }
-  li { margin-bottom: 10px; }
-  a { color: #0073e6; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .note { color: red; font-weight: bold; }
+/* ====== GLOBAL STYLES ====== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; padding: 20px; }
+h1, h2 { color: #222; }
+a { color: #0073e6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ====== HEADER ====== */
+header { text-align: center; margin-bottom: 40px; }
+header h1 { font-size: 2.5em; margin-bottom: 10px; color: #1a1a1a; }
+header p { font-size: 1.2em; color: #555; }
+
+/* ====== SECTION CARDS ====== */
+section { background-color: #fff; padding: 25px; margin-bottom: 25px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+section h2 { border-bottom: 2px solid #0073e6; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+
+/* ====== LIST STYLING ====== */
+ul { list-style-type: none; padding-left: 0; }
+li { margin-bottom: 10px; }
+
+/* ====== SOCIAL BUTTONS ====== */
+.social-buttons { display: flex; gap: 15px; margin-top: 15px; }
+.social-buttons a { padding: 10px 20px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center; transition: 0.3s; }
+.social-buttons a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.instagram { background: #E4405F; }
+.facebook { background: #3b5998; }
+.telegram { background: #0088cc; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  header h1 { font-size: 2em; }
+}
 </style>
 </head>
 <body>
@@ -28,102 +51,64 @@
 </header>
 
 <section>
-  <h2>O'zbekcha</h2>
-  <ul>
-    <li><strong>Tug‘ilgan sanasi:</strong> 19-iyun 2007</li>
-    <li><strong>Tug‘ilgan joyi:</strong> Chust, Namangan viloyati, O‘zbekiston</li>
-    <li><strong>Ta’limi:</strong>
-      <ul>
-        <li>2014–2023: Chust tuman 3-umumiy o‘rta ta’lim maktabi (imtiyozli bitirgan)</li>
-        <li>2023–2025: Chust tuman 2-son politexnikum (imtiyozli bitirgan)</li>
-        <li>2025–hozir: Korea Aerospace University (Pilot / Aviation Management)</li>
-        <li>TSUE (Bank ishi, onlayn)</li>
-      </ul>
-    </li>
-    <li><strong>Kasbi va Loyihalari:</strong> Full Stack Developer (iOS, Android, Web)<br>
-      Loyihalar: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, 
-      <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, 
-      <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>
-    </li>
-    <li><strong>Til Bilimi:</strong> Ona tili: O‘zbek | Ikkinchi til: Tojik | Ingliz tili: IELTS 7.0+ | Rus tili: Deyarli mukammal</li>
-    <li><strong>Sertifikatlari:</strong> Ingliz tili, IT, Matematika, Fizika va boshqa ko‘plab sohalar.</li>
-    <li><strong>Hayotiy shiori:</strong> “Orzularim men uchun masofa emas — ular yo‘l xaritam.”</li>
-  </ul>
-  <p class="note">Diqqat: Bu biografiya faqat haqiqiy Abbosov Azizbek Avazkhon Ugli uchun tayyorlangan.</p>
+  <h2>Русский</h2>
+  <p><strong>Аббосов Азизбек Авазхон Угли</strong> (родился 19 июня 2007 года, Чуст, Наманганская область, Узбекистан) — целеустремлённый, знающий и преданный молодой специалист, Full Stack разработчик и будущий пилот.</p>
+  <p>Он младший в семье из пяти человек — родители Авaзхон Нугманов и Дильфуза Холмирзаева, старший брат Улугбек Аббосов, старшая сестра Шахноза Аббосова.</p>
+  <p>Азизбек учился 2014–2023 в средней школе №3 Чуста (окончил с отличием) и 2023–2025 в Политехникуме №2 Чуста (окончил с отличием).</p>
+  <p>С 2025 года он учится в Korea Aerospace University по направлению Пилот (Управление авиацией). Также обучается онлайн в TSUE по банковскому делу. Его мечта — стать профессиональным пилотом, и он осуществляет её в Корее.</p>
+  <p>Азизбек — Full Stack разработчик, умеет работать на платформах iOS, Android и Web (frontend и backend). Проекты: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
+  <p>Языки: узбекский (родной), таджикский (второй), английский (свободно, IELTS 7.0+), русский (продвинутый).</p>
+  <p>Сертификаты: английский, IT, математика, физика и многие другие.</p>
+  <p>Он никогда не тратит время зря, работает над собой и всегда стремится к своим целям с решимостью. Ставит высокие требования к себе и достигает их трудом.</p>
+  <p><strong>Жизненный девиз:</strong> “Мои мечты — не расстояния, они — моя карта пути.”</p>
 </section>
 
 <section>
   <h2>English</h2>
-  <ul>
-    <li><strong>Full Name:</strong> Abbosov Azizbek Avazkhon Ugli</li>
-    <li><strong>Date of Birth:</strong> June 19, 2007</li>
-    <li><strong>Place of Birth:</strong> Chust, Namangan Region, Uzbekistan</li>
-    <li><strong>Education:</strong>
-      <ul>
-        <li>2014–2023: Chust Secondary School No.3 (Graduated with honors)</li>
-        <li>2023–2025: Chust Polytechnic College No.2 (Graduated with honors)</li>
-        <li>2025–present: Korea Aerospace University (Pilot / Aviation Management)</li>
-        <li>TSUE (Banking, online)</li>
-      </ul>
-    </li>
-    <li><strong>Profession and Projects:</strong> Full Stack Developer (iOS, Android, Web)<br>
-      Projects: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, 
-      <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, 
-      <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>
-    </li>
-    <li><strong>Languages:</strong> Uzbek (native), Tajik (second), English (fluent, IELTS 7.0+), Russian (advanced)</li>
-    <li><strong>Certificates:</strong> English, IT, Math, Physics, and more.</li>
-    <li><strong>Life Motto:</strong> “My dreams are not distances — they are my roadmap.”</li>
-  </ul>
+  <p><strong>Abbosov Azizbek Avazkhon Ugli</strong> (born June 19, 2007, Chust, Namangan Region, Uzbekistan) is a goal-oriented, knowledgeable, and dedicated young professional, full stack developer, and aspiring pilot.</p>
+  <p>He is the youngest in a family of five — parents Avazkhon Nugmanov and Dilfuza Kholmirzayeva, elder brother Ulug‘bek Abbosov, elder sister Shahnoza Abbosova.</p>
+  <p>Azizbek studied 2014–2023 at Chust Secondary School No.3 (graduated with honors) and 2023–2025 at Chust Polytechnic College No.2 (graduated with honors).</p>
+  <p>Since 2025, he has been studying at Korea Aerospace University in Pilot (Aviation Management). He also studies online at TSUE in Banking. His dream is to become a professional pilot, and he is pursuing it in Korea.</p>
+  <p>Azizbek is a Full Stack Developer, proficient in iOS, Android, and Web platforms (frontend and backend). His projects: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
+  <p>Languages: Uzbek (native), Tajik (second), English (fluent, IELTS 7.0+), Russian (advanced).</p>
+  <p>Certificates: English, IT, Math, Physics, and many others.</p>
+  <p>He never wastes time, works on himself, and always strives to achieve his goals with determination. He sets high standards for himself and succeeds through hard work.</p>
+  <p><strong>Life Motto:</strong> “My dreams are not distances — they are my roadmap.”</p>
 </section>
 
 <section>
-  <h2>Русский</h2>
-  <ul>
-    <li><strong>ФИО:</strong> Аббосов Азизбек Авазхон Угли</li>
-    <li><strong>Дата рождения:</strong> 19 июня 2007</li>
-    <li><strong>Место рождения:</strong> Чуст, Наманганская область, Узбекистан</li>
-    <li><strong>Образование:</strong>
-      <ul>
-        <li>2014–2023: Средняя школа №3 Чуста (окончил с отличием)</li>
-        <li>2023–2025: Политехникум №2 Чуста (окончил с отличием)</li>
-        <li>2025–наст. время: Korea Aerospace University (Пилот / Управление авиацией)</li>
-        <li>TSUE (Банковское дело, онлайн)</li>
-      </ul>
-    </li>
-    <li><strong>Профессия и проекты:</strong> Full Stack Developer (iOS, Android, Web)<br>
-      Проекты: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, 
-      <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, 
-      <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>
-    </li>
-    <li><strong>Языки:</strong> Узбек (родной), Таджик (второй), Английский (свободно), Русский (продвинутый)</li>
-    <li><strong>Сертификаты:</strong> Английский, IT, Математика, Физика и многое другое.</li>
-    <li><strong>Жизненное кредо:</strong> “Мои мечты — не расстояния, они — моя карта пути.”</li>
-  </ul>
+  <h2>O'zbekcha</h2>
+  <p><strong>Abbosov Azizbek Avazkhon Ugli</strong> (tug‘ilgan 19-iyun 2007, Chust, Namangan viloyati, O‘zbekiston) — maqsadga intiluvchan, bilimli va fidoyi yosh mutaxassis, full stack dasturchi va kelajakdagi aviator.</p>
+  <p>U besh kishilik oilaning kenja farzandi — ota-onasi Nugmanov Avazkhon va Xolmirzayeva Dilfuza, aka Abbosov Ulug‘bek, opa Abbosova Shahnoza va o‘zi.</p>
+  <p>Azizbek 2014–2023-yillarda Chust tuman Xalq ta’limi bo‘limiga qarashli 3-umumiy o‘rta ta’lim maktabida tahsil olib, imtiyozli bitirgan. 2023–2025-yillarda esa Chust tuman 2-sonli politexnikumida o‘qib, imtiyozli ravishda bitirgan.</p>
+  <p>2025-yildan boshlab u Korea Aerospace Universityda Pilot (Aviation Management) yo‘nalishida tahsil olmoqda. Shu bilan birga, Toshkent Davlat Iqtisodiyot Universitetida (TSUE) Bank ishi yo‘nalishida onlayn ta’lim oladi. Uning orzusi — professional pilot bo‘lish, va u bunga Koreyada tahsil olib erishmoqda.</p>
+  <p>Azizbek — Full Stack Developer, iOS, Android va Web platformalarida ishlay oladi (frontend va backend). U yaratgan loyihalar: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, va <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>, uning texnik salohiyati va ijodkorligini namoyon etadi.</p>
+  <p>U o‘zbek tilini ona tili sifatida biladi, tojik tilini ikkinchi til sifatida, ingliz tilini mukammal (IELTS 7.0+) va rus tilini deyarli mukammal darajada egallagan.</p>
+  <p>Sertifikatlari: Turli yo‘nalishlarda — ingliz tili, IT, matematika, fizika va boshqa ko‘plab sohalarda.</p>
+  <p>Azizbek o‘z vaqtini bekorga sarflamaydi, o‘z ustida ishlaydi va doim o‘z maqsadlariga erishish uchun qat’iyat bilan harakat qiladi. U o‘ziga juda ko‘p talab qo‘yadi va mehnati bilan erishadi.</p>
+  <p><strong>Hayotiy shiori:</strong> “Orzularim men uchun masofa emas — ular yo‘l xaritam.”</p>
+  <p>Abbosov Azizbek — o‘z bilim va mehnati orqali O‘zbekistonning kelajakdagi yutuqlariga hissa qo‘shishni maqsad qilgan yosh lider va ilhomlantiruvchi shaxs.</p>
 </section>
 
 <section>
   <h2>한국어</h2>
+  <p><strong>압보소프 아지즈벡 아바즈콘 우글리</strong> (2007년 6월 19일, 우즈베키스탄 나망간주 추스트 출생) — 목표 지향적이고 지식이 풍부하며 헌신적인 젊은 전문가, 풀스택 개발자이자 장래 조종사.</p>
+  <p>그는 5인 가족 중 막내 — 부모님: 아바즈콘 누그마노프, 딜푸자 홀미르자예바, 형: 울루그벡 압보소프, 누나: 샤흐노자 압보소바.</p>
+  <p>2014–2023년 추스트 제3중학교 재학 (우수 졸업), 2023–2025년 추스트 제2폴리테크닉 대학 재학 (우수 졸업).</p>
+  <p>2025년부터 Korea Aerospace University에서 조종사(항공 관리) 전공. 또한 TSUE에서 은행업 온라인 교육 수강. 그의 꿈은 전문 조종사가 되는 것, 현재 한국에서 이를 실현 중.</p>
+  <p>압보소프 아지즈벡 — 풀스택 개발자, iOS, Android, Web 플랫폼(프론트엔드 및 백엔드) 가능. 프로젝트: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
+  <p>언어: 우즈벡어(모국어), 타지크어(두번째 언어), 영어(유창, IELTS 7.0+), 러시아어(상급).</p>
+  <p>자격증: 영어, IT, 수학, 물리학 등 다양한 분야.</p>
+  <p>그는 시간을 허비하지 않고, 자신을 개발하며 목표 달성을 위해 항상 결단력 있게 노력함. 스스로에게 높은 기준을 두고 노력으로 성취함.</p>
+  <p><strong>인생 좌우명:</strong> “나의 꿈은 거리로 측정되지 않는다 — 그것은 나의 지도다.”</p>
+</section>
+
+<section>
+  <h2>Ijtimoiy tarmoqlar</h2>
   <ul>
-    <li><strong>이름:</strong> 압보소프 아지즈벡 아바즈콘 우글리</li>
-    <li><strong>생년월일:</strong> 2007년 6월 19일</li>
-    <li><strong>출생지:</strong> 우즈베키스탄 나망간주 추스트</li>
-    <li><strong>학력:</strong>
-      <ul>
-        <li>2014–2023: 추스트 제3중학교 (우수졸업)</li>
-        <li>2023–2025: 추스트 제2폴리테크닉 대학 (우수졸업)</li>
-        <li>2025–현재: Korea Aerospace University (항공 관리 / 조종사)</li>
-        <li>TSUE (은행업, 온라인)</li>
-      </ul>
-    </li>
-    <li><strong>직업 및 프로젝트:</strong> 풀스택 개발자 (iOS, Android, Web)<br>
-      프로젝트: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, 
-      <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, 
-      <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>
-    </li>
-    <li><strong>언어:</strong> 우즈벡어(모국어), 타지크어(두번째 언어), 영어(유창, IELTS 7.0+), 러시아어(상급)</li>
-    <li><strong>자격증:</strong> 영어, IT, 수학, 물리학 등 다양한 분야</li>
-    <li><strong>인생 좌우명:</strong> “나의 꿈은 거리로 측정되지 않는다 — 그것은 나의 지도다.”</li>
+    <li><a href="https://www.instagram.com/a_abbosov_a/" target="_blank">Instagram</a></li>
+    <li><a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank">Facebook</a></li>
+    <li><a href="https://t.me/a_abbosov_a" target="_blank">Telegram</a></li>
   </ul>
 </section>
 
