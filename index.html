@@ -1,117 +1,871 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Abbosov Azizbek Avazkhon Ugli - Full Stack Developer, Aspiring Pilot, Multilingual Professional. Projects: faslmarket.uz, shokmarket.uz, bekedu.uz">
 <meta name="keywords" content="Abbosov Azizbek, Full Stack Developer, Pilot, Aviation, Uzbekistan, Portfolio, iOS, Android, Web Development">
 <meta name="author" content="Abbosov Azizbek">
+
 <title>Abbosov Azizbek - Professional Biography</title>
+<link rel="shortcut icon" href="assets/images/faviicon.png" type="image/x-icon">
 <style>
-/* ====== GLOBAL STYLES ====== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; padding: 20px; }
-h1, h2 { color: #222; }
-a { color: #0073e6; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* ---------- RESET & VARIABLES ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ====== HEADER ====== */
-header { text-align: center; margin-bottom: 40px; }
-header h1 { font-size: 2.5em; margin-bottom: 10px; color: #1a1a1a; }
-header p { font-size: 1.2em; color: #555; }
+:root {
+  --primary: #1e40af;
+  --secondary: #0f172a;
+  --accent: #3b82f6;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --gold: #f59e0b;
+}
 
-/* ====== SECTION CARDS ====== */
-section { background-color: #fff; padding: 25px; margin-bottom: 25px; border-radius: 15px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
-section h2 { border-bottom: 2px solid #0073e6; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: var(--secondary);
+  line-height: 1.6;
+}
 
-/* ====== LIST STYLING ====== */
-ul { list-style-type: none; padding-left: 0; }
-li { margin-bottom: 10px; }
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
 
-/* ====== SOCIAL BUTTONS ====== */
-.social-buttons { display: flex; gap: 15px; margin-top: 15px; }
-.social-buttons a { padding: 10px 20px; border-radius: 8px; color: #fff; font-weight: bold; text-align: center; transition: 0.3s; }
-.social-buttons a:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-.instagram { background: #E4405F; }
+.hero-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+.profile-pic-wrapper {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #ffffff;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.profile-pic-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-info {
+  color: white;
+  margin-bottom: 40px;
+}
+
+.hero-info h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-info .subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.hero-info .motto {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--gold);
+  padding: 15px;
+  border-left: 3px solid var(--gold);
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 500px;
+}
+
+/* ---------- LANGUAGES ---------- */
+.lang-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.lang-tab {
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+}
+
+.lang-tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lang-tab.active {
+  background: var(--gold);
+  color: var(--secondary);
+  border-color: var(--gold);
+}
+
+/* ---------- CAROUSEL ---------- */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-caption {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.carousel-caption h3 {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--secondary);
+  transition: all 0.3s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: var(--gold);
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* ---------- GRID CARDS ---------- */
+.university-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.university-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s;
+}
+
+.university-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 10px 40px rgba(30, 64, 175, 0.1);
+  transform: translateY(-5px);
+}
+
+.university-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.university-card p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.university-card strong {
+  color: var(--secondary);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.info-card {
+  background: var(--light);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.info-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.info-card p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* ---------- SKILLS ---------- */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.skill-pill {
+  padding: 12px 24px;
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.skill-pill:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ---------- PROJECTS ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.project-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 40px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.project-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 15px 50px rgba(30, 64, 175, 0.15);
+  transform: translateY(-8px);
+}
+
+.project-card h4 {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.project-card p {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.project-card a {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.project-card a:hover {
+  background: var(--secondary);
+}
+
+/* ---------- SOCIAL LINKS ---------- */
+.social-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  justify-content: center;
+}
+
+.social-btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.linkedin { background: #0077b5; }
+.instagram { background: #e4405f; }
 .facebook { background: #3b5998; }
 .telegram { background: #0088cc; }
 
-/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  body { padding: 10px; }
-  header h1 { font-size: 2em; }
+  .hero-info h1 { font-size: 2rem; }
+  .profile-pic-wrapper { width: 150px; height: 150px; }
+  .carousel-slide img { height: 350px; }
+  .university-grid { grid-template-columns: 1fr; }
+  .section { padding: 60px 20px; }
 }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Abbosov Azizbek Avazkhon Ugli</h1>
-  <p>Full Stack Developer | Aspiring Pilot | Multilingual Professional</p>
-</header>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="profile-pic-wrapper">
+      <img src="assets/images/profile.jpg" alt="Azizbek Abbosov">
+    </div>
 
-<section>
-  <h2>Русский</h2>
-  <p><strong>Аббосов Азизбек Авазхон Угли</strong> (родился 19 июня 2007 года, Чуст, Наманганская область, Узбекистан) — целеустремлённый, знающий и преданный молодой специалист, Full Stack разработчик и будущий пилот.</p>
-  <p>Он младший в семье из пяти человек — родители Авaзхон Нугманов и Дильфуза Холмирзаева, старший брат Улугбек Аббосов, старшая сестра Шахноза Аббосова.</p>
-  <p>Азизбек учился 2014–2023 в средней школе №3 Чуста (окончил с отличием) и 2023–2025 в Политехникуме №2 Чуста (окончил с отличием).</p>
-  <p>С 2025 года он учится в Korea Aerospace University по направлению Пилот (Управление авиацией). Также обучается онлайн в TSUE по банковскому делу. Его мечта — стать профессиональным пилотом, и он осуществляет её в Корее.</p>
-  <p>Азизбек — Full Stack разработчик, умеет работать на платформах iOS, Android и Web (frontend и backend). Проекты: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
-  <p>Языки: узбекский (родной), таджикский (второй), английский (свободно, IELTS 7.0+), русский (продвинутый).</p>
-  <p>Сертификаты: английский, IT, математика, физика и многие другие.</p>
-  <p>Он никогда не тратит время зря, работает над собой и всегда стремится к своим целям с решимостью. Ставит высокие требования к себе и достигает их трудом.</p>
-  <p><strong>Жизненный девиз:</strong> “Мои мечты — не расстояния, они — моя карта пути.”</p>
+    <div class="hero-info">
+      <h1>Azizbek Abbosov</h1>
+      <p class="subtitle">Pilot-in-Training at KAU | Finance Student at TSUE | Full Stack Developer</p>
+      <p class="motto">"My dreams are not distances — they are my roadmap."</p>
+    </div>
+
+    <div class="lang-tabs">
+      <button class="lang-tab active" onclick="switchLang(event,'en')">English</button>
+      <button class="lang-tab" onclick="switchLang(event,'ru')">Русский</button>
+      <button class="lang-tab" onclick="switchLang(event,'uz')">O'zbekcha</button>
+      <button class="lang-tab" onclick="switchLang(event,'ko')">한국어</button>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-track" id="track">
+          <div class="carousel-slide"><img src="assets/images/pilotUniform.jpg" alt="Cockpit"></div>
+          <div class="carousel-slide"><img src="assets/images/pilotUniform2.jpg" alt="Education"></div>
+          <div class="carousel-slide"><img src="assets/images/kauPlane.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/kauairport1.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/kauairport2.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/museum.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/justpic.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/justPic2.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/gavo.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/tsue.jpg" alt="Technology"></div>
+          <div class="carousel-slide"><img src="assets/images/diplomaWithHonours.jpg" alt="Technology"></div>
+        </div>
+        <button class="carousel-btn prev" onclick="move(-1)">‹</button>
+        <button class="carousel-btn next" onclick="move(1)">›</button>
+      </div>
+
+      <div class="carousel-caption" id="caption">
+        <h3>Pursuing Aviation Excellence</h3>
+        <p>Training at Korea Aerospace University to become a professional pilot</p>
+      </div>
+
+      <div class="carousel-dots" id="dots"></div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>English</h2>
-  <p><strong>Abbosov Azizbek Avazkhon Ugli</strong> (born June 19, 2007, Chust, Namangan Region, Uzbekistan) is a goal-oriented, knowledgeable, and dedicated young professional, full stack developer, and aspiring pilot.</p>
-  <p>He is the youngest in a family of five — parents Avazkhon Nugmanov and Dilfuza Kholmirzayeva, elder brother Ulug‘bek Abbosov, elder sister Shahnoza Abbosova.</p>
-  <p>Azizbek studied 2014–2023 at Chust Secondary School No.3 (graduated with honors) and 2023–2025 at Chust Polytechnic College No.2 (graduated with honors).</p>
-  <p>Since 2025, he has been studying at Korea Aerospace University in Pilot (Aviation Management). He also studies online at TSUE in Banking. His dream is to become a professional pilot, and he is pursuing it in Korea.</p>
-  <p>Azizbek is a Full Stack Developer, proficient in iOS, Android, and Web platforms (frontend and backend). His projects: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
-  <p>Languages: Uzbek (native), Tajik (second), English (fluent, IELTS 7.0+), Russian (advanced).</p>
-  <p>Certificates: English, IT, Math, Physics, and many others.</p>
-  <p>He never wastes time, works on himself, and always strives to achieve his goals with determination. He sets high standards for himself and succeeds through hard work.</p>
-  <p><strong>Life Motto:</strong> “My dreams are not distances — they are my roadmap.”</p>
-</section>
+<!-- ================= SCRIPTS ================= -->
+<script>
+let current = 0;
+const captions = [
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+  {title: "Academic Excellence", desc: "Dual degree pursuit in Aviation Management and Banking & Finance"},
+];
 
-<section>
-  <h2>O'zbekcha</h2>
-  <p><strong>Abbosov Azizbek Avazkhon Ugli</strong> (tug‘ilgan 19-iyun 2007, Chust, Namangan viloyati, O‘zbekiston) — maqsadga intiluvchan, bilimli va fidoyi yosh mutaxassis, full stack dasturchi va kelajakdagi aviator.</p>
-  <p>U besh kishilik oilaning kenja farzandi — ota-onasi Nugmanov Avazkhon va Xolmirzayeva Dilfuza, aka Abbosov Ulug‘bek, opa Abbosova Shahnoza va o‘zi.</p>
-  <p>Azizbek 2014–2023-yillarda Chust tuman Xalq ta’limi bo‘limiga qarashli 3-umumiy o‘rta ta’lim maktabida tahsil olib, imtiyozli bitirgan. 2023–2025-yillarda esa Chust tuman 2-sonli politexnikumida o‘qib, imtiyozli ravishda bitirgan.</p>
-  <p>2025-yildan boshlab u Korea Aerospace Universityda Pilot (Aviation Management) yo‘nalishida tahsil olmoqda. Shu bilan birga, Toshkent Davlat Iqtisodiyot Universitetida (TSUE) Bank ishi yo‘nalishida onlayn ta’lim oladi. Uning orzusi — professional pilot bo‘lish, va u bunga Koreyada tahsil olib erishmoqda.</p>
-  <p>Azizbek — Full Stack Developer, iOS, Android va Web platformalarida ishlay oladi (frontend va backend). U yaratgan loyihalar: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, va <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>, uning texnik salohiyati va ijodkorligini namoyon etadi.</p>
-  <p>U o‘zbek tilini ona tili sifatida biladi, tojik tilini ikkinchi til sifatida, ingliz tilini mukammal (IELTS 7.0+) va rus tilini deyarli mukammal darajada egallagan.</p>
-  <p>Sertifikatlari: Turli yo‘nalishlarda — ingliz tili, IT, matematika, fizika va boshqa ko‘plab sohalarda.</p>
-  <p>Azizbek o‘z vaqtini bekorga sarflamaydi, o‘z ustida ishlaydi va doim o‘z maqsadlariga erishish uchun qat’iyat bilan harakat qiladi. U o‘ziga juda ko‘p talab qo‘yadi va mehnati bilan erishadi.</p>
-  <p><strong>Hayotiy shiori:</strong> “Orzularim men uchun masofa emas — ular yo‘l xaritam.”</p>
-  <p>Abbosov Azizbek — o‘z bilim va mehnati orqali O‘zbekistonning kelajakdagi yutuqlariga hissa qo‘shishni maqsad qilgan yosh lider va ilhomlantiruvchi shaxs.</p>
-</section>
+function init() {
+  const dotsEl = document.getElementById('dots');
+  captions.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goTo(i);
+    dotsEl.appendChild(dot);
+  });
+}
 
-<section>
-  <h2>한국어</h2>
-  <p><strong>압보소프 아지즈벡 아바즈콘 우글리</strong> (2007년 6월 19일, 우즈베키스탄 나망간주 추스트 출생) — 목표 지향적이고 지식이 풍부하며 헌신적인 젊은 전문가, 풀스택 개발자이자 장래 조종사.</p>
-  <p>그는 5인 가족 중 막내 — 부모님: 아바즈콘 누그마노프, 딜푸자 홀미르자예바, 형: 울루그벡 압보소프, 누나: 샤흐노자 압보소바.</p>
-  <p>2014–2023년 추스트 제3중학교 재학 (우수 졸업), 2023–2025년 추스트 제2폴리테크닉 대학 재학 (우수 졸업).</p>
-  <p>2025년부터 Korea Aerospace University에서 조종사(항공 관리) 전공. 또한 TSUE에서 은행업 온라인 교육 수강. 그의 꿈은 전문 조종사가 되는 것, 현재 한국에서 이를 실현 중.</p>
-  <p>압보소프 아지즈벡 — 풀스택 개발자, iOS, Android, Web 플랫폼(프론트엔드 및 백엔드) 가능. 프로젝트: <a href="https://faslmarket.uz" target="_blank">faslmarket.uz</a>, <a href="https://shokmarket.uz" target="_blank">shokmarket.uz</a>, <a href="https://bekedu.uz" target="_blank">bekedu.uz</a>.</p>
-  <p>언어: 우즈벡어(모국어), 타지크어(두번째 언어), 영어(유창, IELTS 7.0+), 러시아어(상급).</p>
-  <p>자격증: 영어, IT, 수학, 물리학 등 다양한 분야.</p>
-  <p>그는 시간을 허비하지 않고, 자신을 개발하며 목표 달성을 위해 항상 결단력 있게 노력함. 스스로에게 높은 기준을 두고 노력으로 성취함.</p>
-  <p><strong>인생 좌우명:</strong> “나의 꿈은 거리로 측정되지 않는다 — 그것은 나의 지도다.”</p>
-</section>
+function move(dir) {
+  current = (current + dir + captions.length) % captions.length;
+  document.getElementById('track').style.transform = `translateX(-${current * 100}%)`;
+  update();
+}
 
-<section>
-  <h2>Ijtimoiy tarmoqlar</h2>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/a-abbosov/" target="_blank">LinkedIn</a></li>
-    <li><a href="https://www.instagram.com/a_abbosov_a/" target="_blank">Instagram</a></li>
-    <li><a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank">Facebook</a></li>
-    <li><a href="https://t.me/a_abbosov_a" target="_blank">Telegram</a></li>
-  </ul>
-</section>
+function goTo(i) {
+  current = i;
+  document.getElementById('track').style.transform = `translateX(-${current * 100}%)`;
+  update();
+}
+
+function update() {
+  const cap = document.getElementById('caption');
+  cap.querySelector('h3').textContent = captions[current].title;
+  cap.querySelector('p').textContent = captions[current].desc;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function switchLang(e, lang) {
+  // safely handle tabs
+  document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  if (e && e.currentTarget) e.currentTarget.classList.add('active');
+  // fallback: if clicked element isn't available, find tab by text
+  else {
+    document.querySelectorAll('.lang-tab').forEach(t => {
+      if (t.textContent.trim().toLowerCase().startsWith(lang.substring(0,2))) {
+        t.classList.add('active');
+      }
+    });
+  }
+  const target = document.getElementById(lang);
+  if (target) {
+    target.classList.add('active');
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+setInterval(() => move(1), 10000);
+init();
+</script>
+
+<!-- ================= MULTI-LANGUAGE SECTIONS ================= -->
+<!-- ENGLISH -->
+<div id="en" class="section active">
+  <h2>Education</h2>
+  <div class="university-grid">
+    <div class="university-card">
+      <h3>✈️ Korea Aerospace University (KAU)</h3>
+      <p><strong>Program:</strong> Pilot Training (Aviation Management)<br>
+      <strong>Duration:</strong> 2025 – Present<br>
+      <strong>Location:</strong> South Korea<br><br>
+      Pursuing professional pilot certification with focus on aviation operations, flight safety, aeronautical science, and comprehensive flight training.</p>
+    </div>
+    <div class="university-card">
+      <h3>💼 Tashkent State University of Economics (TSUE)</h3>
+      <p><strong>Program:</strong> Banking & Finance (Online)<br>
+      <strong>Duration:</strong> 2025 – Present<br>
+      <strong>Location:</strong> Tashkent, Uzbekistan<br><br>
+      Studying financial systems, banking operations, investment analysis, and economic theory through online education.</p>
+    </div>
+  </div>
+
+  <h2>Background</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Personal Information</h3>
+      <p><strong>Born:</strong> June 19, 2007<br>
+      <strong>Location:</strong> Chust, Namangan Region, Uzbekistan<br>
+      <strong>Family:</strong> Youngest of five member family</p>
+    </div>
+    <div class="info-card">
+      <h3>Previous Education</h3>
+      <p><strong>2014–2023:</strong> Chust Secondary School No.3 (Honors)<br>
+      <strong>2023–2025:</strong> Chust Polytechnic College No.2 (Honors)</p>
+    </div>
+    <div class="info-card">
+      <h3>Languages</h3>
+      <p><strong>Uzbek:</strong> Native<br>
+      <strong>Tajik:</strong> Second language<br>
+      <strong>English:</strong> Fluent (IELTS 7.0+)<br>
+      <strong>Russian:</strong> Advanced</p>
+    </div>
+  </div>
+
+  <h2>Technical Expertise</h2>
+  <div class="skills">
+    <span class="skill-pill">iOS Development</span>
+    <span class="skill-pill">Android Development</span>
+    <span class="skill-pill">Web Frontend</span>
+    <span class="skill-pill">Web Backend</span>
+    <span class="skill-pill">Full Stack Development</span>
+    <span class="skill-pill">UI/UX Design</span>
+    <span class="skill-pill">Database Management</span>
+    <span class="skill-pill">API Development</span>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h4>Fasl Market</h4>
+      <p>E-commerce platform with full-stack implementation featuring modern UI and robust backend</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h4>Shok Market</h4>
+      <p>Modern marketplace solution with advanced features and seamless user experience</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h4>Bek Edu</h4>
+      <p>Educational technology platform designed for enhanced learning experiences</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+  </div>
+
+  <h2>Connect</h2>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/a-abbosov/" target="_blank" class="social-btn linkedin"><span>💼</span> LinkedIn</a>
+    <a href="https://www.instagram.com/a_abbosov_a/" target="_blank" class="social-btn instagram"><span>📸</span> Instagram</a>
+    <a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank" class="social-btn facebook"><span>👥</span> Facebook</a>
+    <a href="https://t.me/a_abbosov_a" target="_blank" class="social-btn telegram"><span>✈️</span> Telegram</a>
+  </div>
+</div>
+
+<!-- RUSSIAN -->
+<div id="ru" class="section">
+  <h2>Образование</h2>
+  <div class="university-grid">
+    <div class="university-card">
+      <h3>✈️ Корейский аэрокосмический университет (КАУ)</h3>
+      <p><strong>Программа:</strong> Подготовка пилотов<br>
+      <strong>Период:</strong> 2025 – Настоящее время<br>
+      <strong>Местоположение:</strong> Южная Корея<br><br>
+      Получение профессиональной сертификации пилота с акцентом на авиационные операции и безопасность полётов.</p>
+    </div>
+    <div class="university-card">
+      <h3>💼 Ташкентский государственный экономический университет (ТГЭУ)</h3>
+      <p><strong>Программа:</strong> Банковское дело и финансы (Онлайн)<br>
+      <strong>Период:</strong> 2025 – Настоящее время<br>
+      <strong>Местоположение:</strong> Ташкент, Узбекистан<br><br>
+      Изучение финансовых систем и банковских операций.</p>
+    </div>
+  </div>
+
+  <h2>Биография</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Личная информация</h3>
+      <p><strong>Дата рождения:</strong> 19 июня 2007<br>
+      <strong>Место:</strong> Чуст, Узбекистан<br>
+      <strong>Семья:</strong>Самый младший из пяти членов семьи</p>
+    </div>
+    <div class="info-card">
+      <h3>Предыдущее образование</h3>
+      <p><strong>2014–2023:</strong> Школа №3 (с отличием)<br>
+      <strong>2023–2025:</strong> Политехникум №2 (с отличием)</p>
+    </div>
+    <div class="info-card">
+      <h3>Языки</h3>
+      <p><strong>Узбекский:</strong> Родной<br>
+      <strong>Таджикский:</strong> Второй<br>
+      <strong>Английский:</strong> Свободно (IELTS 7.0+)<br>
+      <strong>Русский:</strong> Продвинутый</p>
+    </div>
+  </div>
+
+  <h2>Технические навыки</h2>
+  <div class="skills">
+    <span class="skill-pill">iOS разработка</span>
+    <span class="skill-pill">Android разработка</span>
+    <span class="skill-pill">Web Frontend</span>
+    <span class="skill-pill">Web Backend</span>
+    <span class="skill-pill">Full Stack</span>
+    <span class="skill-pill">UI/UX дизайн</span>
+  </div>
+
+  <h2>Проекты</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h4>Fasl Market</h4>
+      <p>Платформа электронной коммерции</p>
+      <a href="#" target="_blank">Посмотреть</a>
+    </div>
+    <div class="project-card">
+      <h4>Shok Market</h4>
+      <p>Современный маркетплейс</p>
+      <a href="#" target="_blank">Посмотреть</a>
+    </div>
+    <div class="project-card">
+      <h4>Bek Edu</h4>
+      <p>Образовательная платформа</p>
+      <a href="#" target="_blank">Посмотреть</a>
+    </div>
+  </div>
+
+  <h2>Связаться</h2>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/a-abbosov/" target="_blank" class="social-btn linkedin"><span>💼</span> LinkedIn</a>
+    <a href="https://www.instagram.com/a_abbosov_a/" target="_blank" class="social-btn instagram"><span>📸</span> Instagram</a>
+    <a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank" class="social-btn facebook"><span>👥</span> Facebook</a>
+    <a href="https://t.me/a_abbosov_a" target="_blank" class="social-btn telegram"><span>✈️</span> Telegram</a>
+  </div>
+</div>
+
+<!-- UZBEK -->
+<div id="uz" class="section">
+  <h2>Ta'lim</h2>
+  <div class="university-grid">
+    <div class="university-card">
+      <h3>✈️ Koreya Aerokosmik Universiteti (KAU)</h3>
+      <p><strong>Dastur:</strong> Uchuvchi tayyorlash<br>
+      <strong>Davomiyligi:</strong> 2025 – Hozir<br>
+      <strong>Joylashuv:</strong> Janubiy Koreya<br><br>
+      Professional uchuvchi sertifikati olish.</p>
+    </div>
+    <div class="university-card">
+      <h3>💼 Toshkent davlat iqtisodiyot universiteti (TDIU)</h3>
+      <p><strong>Dastur:</strong> Bank ishi va moliya (Onlayn)<br>
+      <strong>Davomiyligi:</strong> 2025 – Hozir<br>
+      <strong>Joylashuv:</strong> Toshkent, O'zbekiston<br><br>
+      Moliyaviy tizimlar va bank operatsiyalarini o'rganish.</p>
+    </div>
+  </div>
+
+  <h2>Tarjimayi hol</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Shaxsiy ma'lumotlar</h3>
+      <p><strong>Tug'ilgan:</strong> 19-iyun 2007<br>
+      <strong>Joy:</strong> Chust, O'zbekiston<br>
+      <strong>Oila:</strong> Kenja farzand</p>
+    </div>
+    <div class="info-card">
+      <h3>Oldingi ta'lim</h3>
+      <p><strong>2014–2023:</strong> Chust 3-maktab (imtiyozli)<br>
+      <strong>2023–2025:</strong> Chust 2-politexnikum (imtiyozli)</p>
+    </div>
+    <div class="info-card">
+      <h3>Tillar</h3>
+      <p><strong>O'zbek:</strong> Ona tili<br>
+      <strong>Tojik:</strong> Ikkinchi til<br>
+      <strong>Ingliz:</strong> Mukammal (IELTS 7.0+)<br>
+      <strong>Rus:</strong> Yuqori daraja</p>
+    </div>
+  </div>
+
+  <h2>Texnik ko'nikmalar</h2>
+  <div class="skills">
+    <span class="skill-pill">iOS dasturlash</span>
+    <span class="skill-pill">Android dasturlash</span>
+    <span class="skill-pill">Web Frontend</span>
+    <span class="skill-pill">Web Backend</span>
+    <span class="skill-pill">Full Stack</span>
+    <span class="skill-pill">UI/UX dizayn</span>
+  </div>
+
+  <h2>Loyihalar</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h4>Fasl Market</h4>
+      <p>E-commerce platformasi</p>
+      <a href="#" target="_blank">Ko'rish</a>
+    </div>
+    <div class="project-card">
+      <h4>Shok Market</h4>
+      <p>Zamonaviy marketplace</p>
+      <a href="#" target="_blank">Ko'rish</a>
+    </div>
+    <div class="project-card">
+      <h4>Bek Edu</h4>
+      <p>Ta'lim platformasi</p>
+      <a href="#" target="_blank">Ko'rish</a>
+    </div>
+  </div>
+
+  <h2>Bog'lanish</h2>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/a-abbosov/" target="_blank" class="social-btn linkedin"><span>💼</span> LinkedIn</a>
+    <a href="https://www.instagram.com/a_abbosov_a/" target="_blank" class="social-btn instagram"><span>📸</span> Instagram</a>
+    <a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank" class="social-btn facebook"><span>👥</span> Facebook</a>
+    <a href="https://t.me/a_abbosov_a" target="_blank" class="social-btn telegram"><span>✈️</span> Telegram</a>
+  </div>
+</div>
+
+<!-- KOREAN -->
+<div id="ko" class="section">
+  <h2>학력</h2>
+  <div class="university-grid">
+    <div class="university-card">
+      <h3>✈️ 한국항공대학교 (KAU)</h3>
+      <p><strong>전공:</strong> 조종사 양성과정 (항공경영학)<br>
+      <strong>기간:</strong> 2025 – 현재<br>
+      <strong>위치:</strong> 대한민국<br><br>
+      항공 운항, 비행 안전, 항공 과학 및 종합 비행 훈련에 중점을 둔 전문 조종사 자격 취득 과정에 재학 중.</p>
+    </div>
+    <div class="university-card">
+      <h3>💼 타슈켄트 국립경제대학교 (TSUE)</h3>
+      <p><strong>전공:</strong> 은행 및 금융학 (온라인)<br>
+      <strong>기간:</strong> 2025 – 현재<br>
+      <strong>위치:</strong> 우즈베키스탄 타슈켄트<br><br>
+      온라인 교육을 통해 금융 시스템, 은행 운영, 투자 분석 및 경제 이론을 공부 중.</p>
+    </div>
+  </div>
+
+  <h2>배경</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>개인 정보</h3>
+      <p><strong>출생:</strong> 2007년 6월 19일<br>
+      <strong>출생지:</strong> 우즈베키스탄 나망간 주 추스트 지역<br>
+      <strong>가족:</strong> 5남매 중 막내</p>
+    </div>
+    <div class="info-card">
+      <h3>이전 교육</h3>
+      <p><strong>2014–2023:</strong> 추스트 제3중학교 (우수 졸업)<br>
+      <strong>2023–2025:</strong> 추스트 제2폴리텍대학 (우수 졸업)</p>
+    </div>
+    <div class="info-card">
+      <h3>언어 능력</h3>
+      <p><strong>우즈벡어:</strong> 모국어<br>
+      <strong>타지크어:</strong> 제2언어<br>
+      <strong>영어:</strong> 유창 (IELTS 7.0+)<br>
+      <strong>러시아어:</strong> 상급</p>
+    </div>
+  </div>
+
+  <h2>기술 전문성</h2>
+  <div class="skills">
+    <span class="skill-pill">iOS 개발</span>
+    <span class="skill-pill">Android 개발</span>
+    <span class="skill-pill">웹 프론트엔드</span>
+    <span class="skill-pill">웹 백엔드</span>
+    <span class="skill-pill">풀스택 개발</span>
+    <span class="skill-pill">UI/UX 디자인</span>
+    <span class="skill-pill">데이터베이스 관리</span>
+    <span class="skill-pill">API 개발</span>
+  </div>
+
+  <h2>프로젝트</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h4>Fasl Market</h4>
+      <p>현대적인 UI와 안정적인 백엔드를 갖춘 풀스택 전자상거래 플랫폼</p>
+      <a href="https://faslmarket.uz" target="_blank">프로젝트 보기</a>
+    </div>
+    <div class="project-card">
+      <h4>Shok Market</h4>
+      <p>고급 기능과 매끄러운 사용자 경험을 갖춘 현대적인 마켓플레이스 솔루션</p>
+      <a href="https://shokmarket.uz" target="_blank">프로젝트 보기</a>
+    </div>
+    <div class="project-card">
+      <h4>Bek Edu</h4>
+      <p>학습 경험을 향상시키기 위해 설계된 교육 기술 플랫폼</p>
+      <a href="https://bekedu.uz" target="_blank">프로젝트 보기</a>
+    </div>
+  </div>
+
+  <h2>연락하기</h2>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/a-abbosov/" target="_blank" class="social-btn linkedin"><span>💼</span> LinkedIn</a>
+    <a href="https://www.instagram.com/a_abbosov_a/" target="_blank" class="social-btn instagram"><span>📸</span> Instagram</a>
+    <a href="https://www.facebook.com/share/15Xgopb5ES/" target="_blank" class="social-btn facebook"><span>👥</span> Facebook</a>
+    <a href="https://t.me/a_abbosov_a" target="_blank" class="social-btn telegram"><span>✈️</span> Telegram</a>
+  </div>
+</div>
 
 </body>
 </html>
